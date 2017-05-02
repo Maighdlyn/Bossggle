@@ -19,4 +19,43 @@
   display: flex;
   justify-content: space-between;
   align-items:
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*.game-board{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}*/
+#word{
+  font-size: 5em;
+  height: 1.5em;
+  border-color: rgb(207,149,106);
+  border-width: 5px;
+  border-style: solid;
+  color: rgb(62,68,89);
+}
+
+.letter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(235, 223, 199);
+  height: 1.5em;
+  width: 1.5em;
+  border-style: solid;
+  border-color: rgb(62,68,89);
+  border-width: 5px;
+  color: rgb(62,68,89);
+  margin: 5px;
+  font-size: 5em;
+}
+
+.selected-letter{
+  background-color: rgb(207,149,106);
+  color: rgb(155,73,85);
+  border-color: rgb(155,73,85)
 }
