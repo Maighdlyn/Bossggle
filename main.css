@@ -7,7 +7,9 @@
   display: flex;
   flex-direction: column;
 }
-
+ h1{
+   font-size: 3.5em;
+ }
 #stats-column {
   background-color: rgb(235, 223, 199);
   height: 100vh;
@@ -24,17 +26,21 @@
 #title-box {
   height: 30vh;
   display: flex;
-  border-bottom-style: solid;
-  margin-left: auto;
+  /*border-bottom-style: solid;*/
 }
-#score-row {
+
+#score-row{
+  border-bottom-style: solid;
+  margin: 5em 10px 10px 10px;
+}
+
+.points-row {
   display: flex;
-  justify-content: space-between;
-  align-items:
-  height: 1000px;
+  justify-content: space-between
+  align-items:flex-end;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 
