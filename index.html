@@ -3,22 +3,22 @@
 	<head>
 		<title>Bossggle</title>
 		<link rel="stylesheet" href="main.css"/>
-		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>
 	</head>
 	<body>
-		<div class="row">  <!-- OVER ALL container-->
+		<div class="container-fluid">  <!-- OVER ALL container-->
 
 			<div id="stats-column" >
-				<div id =title-box class="column">
-					<h1>Bossggle</h1>
-					<h5>Make words by clicking the letters! Only dictonary words count.</h5>
-				</div> <!-- Title Container-->
+				<div id =title-box>
+				<h1>Bossggle</h1>
+				<h5>Make words by clicking the letters! Only dictonary words count.</h5>
+
 				<div id=score-row>
 					<h6>score</h6> <!-- score label-->
 					<div>230</div> <!-- total score box-->
 				</div> <!-- Score row-->
 
-
+			</div> <!-- Title Container-->
 
 			<div>
 			<h6>words</h6>
@@ -38,15 +38,10 @@
 			 </div> <!-- Status Column-->
 
 
-			<div id="game-column" class="column">   <!-- Game Section-->
-				<div id="game-top">
+			<div class="col-md-8" id="game-column">   <!-- Game Section-->
+				<div>
 					<h1 id="word">ABC</h1>
-					<div id="buttons">
-						<button id="submit">submit</button>
-						<button id="clear">clear</button>
-					</div>
-				</div>
-
+				<div>
 				<div class="game-board">
 					<div class="row">
 						<div class="letter selected-letter">A</div>
