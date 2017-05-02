@@ -1,1 +1,9 @@
-
+#status-column {
+  background-color: rgb(235, 223, 199);
+  height: 1000px;
+  text-align: center;
+}
+#game-column {
+  background-color: rgb(132, 172, 178);
+  height: 1000px;
+}
