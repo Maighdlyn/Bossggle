@@ -1,13 +1,25 @@
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
 #stats-column {
   background-color: rgb(235, 223, 199);
   height: 100vh;
-  width: 40vw;
+  width: 30vw;
   text-align: center;
 }
 #game-column {
   background-color: rgb(132, 172, 178);
   height: 100vh;
-  width: 60vw;
+  width: 70vw;
+  display: flex;
+  align-items: center;
 }
 #title-box {
   height: 30vh;
@@ -25,18 +37,40 @@
   justify-content: center;
 }
 
-/*.game-board{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}*/
+
 #word{
   font-size: 5em;
   height: 1.5em;
   border-color: rgb(207,149,106);
   border-width: 5px;
   border-style: solid;
-  color: rgb(62,68,89);
+  width: 4.5em;
+}
+
+button{
+  font-size: 2em;
+  height: 1.5em;
+  width: 6.5em;
+  border-radius: .5em;
+}
+
+#buttons{
+  display: flex;
+  flex-direction: column;
+}
+
+#game-top{
+  display: flex;
+  flex-direction: row;
+  margin: 4em;
+}
+
+#clear{
+  background-color: rgb(155,73,85);
+}
+
+#submit{
+  background-color: rgb(207,149,106);
 }
 
 .letter {
@@ -47,9 +81,8 @@
   height: 1.5em;
   width: 1.5em;
   border-style: solid;
-  border-color: rgb(62,68,89);
+  border-color: black;
   border-width: 5px;
-  color: rgb(62,68,89);
   margin: 5px;
   font-size: 5em;
 }
@@ -59,3 +92,6 @@
   color: rgb(155,73,85);
   border-color: rgb(155,73,85)
 }
+
+
+/*everything below this line is temporary*/
