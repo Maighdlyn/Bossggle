@@ -91,18 +91,20 @@ button{
   border-width: 5px;
   margin: 5px;
   font-size: 5em;
-}
-
-.selected-letter{
-  background-color: rgb(207,149,106);
-  color: rgb(155,73,85);
-  border-color: rgb(155,73,85)
-}
-
-.letter-default {
   background-color: rgb(235, 223, 199);
   border-color: black;
 }
+
+/*.selected-letter{
+  background-color: rgb(207,149,106);
+  color: rgb(155,73,85);
+  border-color: rgb(155,73,85)
+}*/
+
+/*.letter-default {
+  background-color: rgb(235, 223, 199);
+  border-color: black;
+}*/
 
 
 
