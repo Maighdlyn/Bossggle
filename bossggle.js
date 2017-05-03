@@ -1,18 +1,31 @@
+
+
 function arrayFunction() {
-  var lettersArray = [];
   var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  for (i = 0; i < 16; i++) {
-    console.log("hi");
+  for (i = 1; i < 17; i++) {
 
-    var randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
-    // lettersArray.push(randomLetter);
-    document.getElementById(i).innerHTML = randomLetter;
+     var randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+     document.getElementById(i).innerHTML = randomLetter;
 
-
-   console.log("random letter = ", randomLetter);
-  };
+   };
 };
 
 
- console.log(arrayFunction())
+arrayFunction();
+
+var spelledWord = [];
+
+function selectLetter () {
+  document.getElementsByClassName("letter-default").className = "selected-letter";
+  spelledWord.push(this.textContent());
+
+}
+
+console.log('spelledWord');
+// window.onload = function()
+//     {
+//   document.getElementsByClassName("letter-default").addEventListener( 'click', selectedLetter);
+//     };
+
+/**  **/

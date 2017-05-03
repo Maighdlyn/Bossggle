@@ -64,6 +64,15 @@ button{
   margin: 4em;
 }
 
+
+
+
+
+
+
+
+
+
 #clear{
   background-color: rgb(155,73,85);
 }
@@ -76,11 +85,9 @@ button{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(235, 223, 199);
   height: 1.5em;
   width: 1.5em;
   border-style: solid;
-  border-color: black;
   border-width: 5px;
   margin: 5px;
   font-size: 5em;
@@ -91,6 +98,14 @@ button{
   color: rgb(155,73,85);
   border-color: rgb(155,73,85)
 }
+
+.letter-default {
+  background-color: rgb(235, 223, 199);
+  border-color: black;
+}
+
+
+
 
 
 /*everything below this line is temporary*/
