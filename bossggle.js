@@ -1,18 +1,16 @@
 (function(){
 
 
-  var spelledWord = [];
+  var chosenLetters = '';
   var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var letterBoxes = document.querySelectorAll(".letter")
   var onLetterClick = function (event) {
 
-    document.getElementById(event.target.id).style.backgroundColor = "rgb(207,149,106)";
-    document.getElementById(event.target.id).style.color = "rgb(155,73,85)";
-    document.getElementById(event.target.id).style.borderColor = "rgb(155,73,85)" ;
-    spelledWord.push(event.target.innerText)
-    var spelledStr = spelledWord.join("");
-    document.getElementById("word").innerHTML = spelledStr;
-    console.log(spelledStr)
+    event.target.classList.add('selected-letter')
+    chosenLetters += event.target.innerText
+    // spelledWord.push(event.target.innerText)
+    // var spelledStr = spelledWord.join("");
+    document.getElementById("word").innerText = chosenLetters;
 
   }
 
@@ -23,23 +21,34 @@
   for (var i = 0; i < letterBoxes.length; i++) {
     letterBoxes[i].addEventListener('click', onLetterClick)
   }
+  document.querySelector('#clear').addEventListener('click', clearWord)
 
   function selectletter() {
     document.querySelectorAll(".letter")
-    spelledWord.push(this.textContent());
+    // spelledWord.push(this.textContent());
 
   }
 
+
+
+  function clearWord () {
+    // event.target.classList.add('selected-letter')
+    // document.getElementsByClassName("letter").style.backgroundColor = "rgb(235, 223, 199)";
+    // document.getElementsByClassName("letter").style.borderColor = "black";
+    // spelledStr = '';
+    // spelledWord = [];
+    var selectedLetters = document.querySelectorAll(".selected-letter");
+    for (var i = 0; i < selectedLetters.length; i++) {
+      selectedLetters[i].classList.remove("selected-letter")
+    }
+    document.getElementById("word").innerText = chosenLetters = '';
+    // document.getElementById("word").innerHTML = spelledWord = [];
+    // console.log('spelled Word = ', spelledWord);
+
+  }
+
+  function pointValue () {
+    var ptValue = spelledStr.length * 9;
+    return ptValue
+  }
 })()
-
-function clearWord () {
-  document.getElementsByClassName("letter").style.backgroundColor = "rgb(235, 223, 199)";
-  // document.getElementsByClassName("letter").style.borderColor = "black";
-  // spelledStr = '';
-  // spelledWord = [];
-  document.getElementById("word").innerText = spelledStr = '';
-  document.getElementById("word").innerHTML = spelledWord = [''];
-  // console.log('spelled Word = ', spelledWord);
-   console.log('spelled String = ', spelledStr);
-
-}
