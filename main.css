@@ -26,14 +26,13 @@
 	display: flex;
 }
 
-#score-row {
+#score-total {
 	border-bottom-style: solid;
 	border-bottom-color: black;
 	border-bottom-width: 2px;
-	
 }
 
-a{
+a {
 	position: absolute;
 	bottom: 15px;
 	left: 20px;
@@ -42,8 +41,6 @@ a{
 #game-column {
 	background-color: rgb(132, 172, 178);
 	width: 70vw;
-	min-width: 50px;
-	/*	Why is min not working???*/
 	display: flex;
 	align-items: center;
 }
