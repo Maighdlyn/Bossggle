@@ -10,8 +10,6 @@
 
 #stats-column {
 	background-color: rgb(235, 223, 199);
-	/*	height: 100vh;*/
-	/*	got rid of line above in conjunction with #game-column height as defining the height was causing issues when resizing window.*/
 	width: 30vw;
 	text-align: center;
 	padding: 25px;
@@ -20,24 +18,23 @@
 .points-row {
 	display: flex;
 	justify-content: space-between;
+	margin: 5px;
 }
 
 #title-box {
 	height: 30vh;
 	display: flex;
-/*	margin: 5px;*/
 }
 
 #score-row {
 	border-bottom-style: solid;
 	border-bottom-color: black;
 	border-bottom-width: 2px;
+	
 }
 
 #game-column {
 	background-color: rgb(132, 172, 178);
-	/*	height: 100vh;*/
-	/*	The line above is what was causing the spacing issue. Getting rid of it makes the layout issues go away.*/
 	min-height: 50px;
 	/*	Why is min-height not working???*/
 	width: 70vw;
