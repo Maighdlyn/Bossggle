@@ -33,11 +33,17 @@
 	
 }
 
+a{
+	position: absolute;
+	bottom: 15px;
+	left: 20px;
+}
+
 #game-column {
 	background-color: rgb(132, 172, 178);
-	min-height: 50px;
-	/*	Why is min-height not working???*/
 	width: 70vw;
+	min-width: 50px;
+	/*	Why is min not working???*/
 	display: flex;
 	align-items: center;
 }
