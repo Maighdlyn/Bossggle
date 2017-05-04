@@ -1,86 +1,66 @@
 <html>
 
 <head>
-  <title>Bossggle</title>
-  <link rel="stylesheet" href="main.css" />
+	<title>Bossggle</title>
+	<link rel="stylesheet" href="main.css" />
 </head>
 
-<body>
-  <div class="row">
-    <!-- OVER ALL container-->
+<body class = "row">
+		<div id="stats-column">
+			<div id=title-box class="column">
+				<h1>Bossggle</h1>
+				<h3>Make words by clicking the letters! Only dictonary words count.</h3>
+			</div>
+			<div id="score-row" class="points-row">
+				<h3>score</h3>
+				<h3 id="score"></h3>
+			</div>
+			<div id="score" class="row points-row">
+				<h3 class="wordList"></h3>
+				<h3 class="wordPoints"></h3>
+			</div>
+		</div>
+		<div id="game-column" class="column">
+			<!-- Game Section-->
+			<div id="game-top">
+				<h1 id="word"></h1>
+				<div id="buttons-div">
+					<button id="submit">submit</button>
+					<button id="clear">clear</button>
+					<button id="reset">reset</button>
+				</div>
+			</div>
 
-    <div id="stats-column">
-      <div id=title-box class="column">
-        <h1>Bossggle</h1>
-        <h2>Make words by clicking the letters! Only dictonary words count.</h2>
-      </div>
-      <!-- end title-box -->
-      <div id="score-row" class="points-row">
-        <h3>score</h3>
-        <!-- score label-->
-        <div id="score">230</div>
-        <!-- total score box-->
-      </div>
-      <!-- end score-row -->
-      <div id="score" class="row points-row">
-        <h3>WORD</h3>
-        <h3>10</h3>
-      </div>
+			<div id="game-board">
+				<div class="row">
+					<div class="letter"></div>
+					<div class="letter"></div>
+					<div class="letter"></div>
+					<div id="4" class="letter"></div>
+				</div>
+				<div class="row">
+					<div class="letter"></div>
+					<div class="letter"></div>
+					<div class="letter"></div>
+					<div class="letter"></div>
+				</div>
+				<div class="row">
+					<div class="letter"></div>
+					<div class="letter"></div>
+					<div class="letter"></div>
+					<div class="letter"></div>
+				</div>
+				<div class="row">
+					<div class="letter"></div>
+					<div class="letter"></div>
+					<div class="letter"></div>
+					<div class="letter"></div>
+				</div>
+			</div>
+<!--		</div>-->
 
-
-      <div>
-        <!-- end stats-column -->
-
-
-      </div>
-      <!-- Words-row-->
-
-
-    </div>
-    <!-- Status Column-->
-
-
-    <div id="game-column" class="column">
-      <!-- Game Section-->
-      <div id="game-top">
-        <h1 id="word"></h1>
-        <div id="buttons">
-          <button id="submit">submit</button>
-          <button id="clear">clear</button>
-          <button id="reset">reset</button>
-        </div>
-      </div>
-
-      <div class="game-board">
-        <div class="row">
-          <div id="1" class="letter" >A</div>
-          <div id="2" class="letter">B</div>
-          <div id="3" class="letter">C</div>
-          <div id="4" class="letter">D</div>
-        </div>
-        <div class="row">
-          <div id="5" class="letter">E</div>
-          <div id="6" class="letter">F</div>
-          <div id="7" class="letter">G</div>
-          <div id="8" class="letter">H</div>
-        </div>
-        <div class="row">
-          <div id="9" class="letter">I</div>
-          <div id="10" class="letter">J</div>
-          <div id="11" class="letter">K</div>
-          <div id="12" class="letter">L</div>
-        </div>
-        <div class="row">
-          <div id="13" class="letter">M</div>
-          <div id="14" class="letter">N</div>
-          <div id="15" class="letter">O</div>
-          <div id="16" class="letter">P</div>
-        </div>
-      </div>
-    </div>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="bossggle.js"></script>
+		<!--		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+		<script type="text/javascript" src="bossggle.js"></script>
 </body>
 
 </html>

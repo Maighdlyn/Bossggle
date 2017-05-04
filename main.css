@@ -1,108 +1,110 @@
-.row{
-  display: flex;
-  flex-direction: row;
+.row {
+	display: flex;
+	flex-direction: row;
 }
 
-.column{
-  display: flex;
-  flex-direction: column;
+.column {
+	display: flex;
+	flex-direction: column;
 }
 
 #stats-column {
-  background-color: rgb(235, 223, 199);
-  height: 100vh;
-  width: 30vw;
-  text-align: center;
+	background-color: rgb(235, 223, 199);
+	/*	height: 100vh;*/
+	/*	got rid of line above in conjunction with #game-column height as defining the height was causing issues when resizing window.*/
+	width: 30vw;
+	text-align: center;
+	padding: 25px;
 }
-#game-column {
-  background-color: rgb(132, 172, 178);
-  height: 100vh;
-  width: 70vw;
-  display: flex;
-  align-items: center;
+
+.points-row {
+	display: flex;
+	justify-content: space-between;
 }
+
 #title-box {
-  height: 30vh;
-  display: flex;
-  border-bottom-style: solid;
-  margin-left: auto;
-}
-.score-row {
-  display: flex;
-  justify-content: space-between;
-  align-items:
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+	height: 30vh;
+	display: flex;
+/*	margin: 5px;*/
 }
 
-
-#word{
-  font-size: 5em;
-  height: 1.5em;
-  border-color: rgb(207,149,106);
-  border-width: 5px;
-  border-style: solid;
-  width: 4.5em;
+#score-row {
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	border-bottom-width: 2px;
 }
 
-button{
-  font-size: 2em;
-  height: 1.5em;
-  width: 6.5em;
-  border-radius: .5em;
+#game-column {
+	background-color: rgb(132, 172, 178);
+	/*	height: 100vh;*/
+	/*	The line above is what was causing the spacing issue. Getting rid of it makes the layout issues go away.*/
+	min-height: 50px;
+	/*	Why is min-height not working???*/
+	width: 70vw;
+	display: flex;
+	align-items: center;
 }
 
-#buttons{
-  display: flex;
-  flex-direction: column;
+#game-top {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 1em;
 }
 
-#game-top{
-  display: flex;
-  flex-direction: row;
-  margin: 4em;
+#word {
+	font-size: 5em;
+	height: 1.5em;
+	border-color: rgb(207, 149, 106);
+	border-width: 5px;
+	border-style: solid;
+	width: 4.5em;
+	margin: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-
-
-
-
-
-
-
-
-
-#clear{
-  background-color: rgb(155,73,85);
+#buttons-div {
+	display: flex;
+	flex-direction: column;
 }
 
-#submit{
-  background-color: rgb(207,149,106);
+button {
+	font-size: 1.5em;
+	min-height: 1.5em;
+	width: 6.5em;
+	border-radius: .5em;
+}
+
+#submit {
+	background-color: rgb(235, 223, 199);
+}
+
+#clear {
+	background-color: rgb(155, 73, 85);
+}
+
+#reset {
+	background-color: rgb(207, 149, 106);
 }
 
 .letter {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 1.5em;
-  width: 1.5em;
-  border-style: solid;
-  border-width: 5px;
-  margin: 5px;
-  font-size: 5em;
-  background-color: rgb(235, 223, 199);
-  border-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 1.5em;
+	width: 1.5em;
+	border-style: solid;
+	border-width: 5px;
+	margin: 5px;
+	font-size: 5em;
+	background-color: rgb(235, 223, 199);
+	border-color: black;
 }
 
-.selected-letter{
-  background-color: rgb(207,149,106);
-  color: rgb(155,73,85);
-  border-color: rgb(155,73,85)
+.selected-letter {
+	background-color: rgb(207, 149, 106);
+	color: rgb(155, 73, 85);
+	border-color: rgb(155, 73, 85)
 }
-
-
-
-
-
-/*everything below this line is temporary*/
