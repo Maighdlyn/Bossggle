@@ -2,7 +2,6 @@
 	var chosenLetters = '';
 	var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	var letterBoxes = document.querySelectorAll(".letter")
-	var pointRows = document.querySelectorAll(".points-row")
 	var ptValue = 0
 	var totalPoints = 0;
 
@@ -13,28 +12,47 @@
 		document.getElementById("word").innerText = chosenLetters;
 	}
 
-	for (var i = 0; i < letterBoxes.length; i++) {
-		var randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
-		letterBoxes[i].innerHTML = randomLetter;
-		letterBoxes[i].addEventListener('click', onLetterClick)
-	}
-	
-	function scoreBoard(){
-			var scoreList = document.querySelector("#score-board");
-			var scoreRow = document.createElement("div");
-			var scoreWord = document.createElement("div");
-			var scoreNumber = document.createElement("div");
-			scoreRow.className += "points-row";
-			scoreWord.innerHTML = chosenLetters;
-			scoreNumber.innerHTML = ptValue;
-			scoreList.insertBefore(scoreRow, scoreList.childNodes[0]);
-			scoreRow.appendChild(scoreWord);
-			scoreRow.appendChild(scoreNumber);
+	function resetBoard() {
+		for (var i = 0; i < letterBoxes.length; i++) {
+			var randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+			if (randomLetter === "Q"){
+				randomLetter = "Qu"
+			}
+			letterBoxes[i].innerHTML = randomLetter;
+			letterBoxes[i].addEventListener('click', onLetterClick)
+		}
+	};
+	resetBoard();
+
+	function scoreBoard() {
+		var scoreList = document.querySelector("#score-board");
+		var scoreRow = document.createElement("div");
+		var scoreWord = document.createElement("div");
+		var scoreNumber = document.createElement("div");
+		scoreRow.className += "points-row";
+		scoreWord.innerHTML = chosenLetters;
+		scoreNumber.innerHTML = ptValue;
+		scoreList.insertBefore(scoreRow, scoreList.childNodes[0]);
+		scoreRow.appendChild(scoreWord);
+		scoreRow.appendChild(scoreNumber);
 	}
 
-	document.querySelector('#clear').addEventListener('click', clear)
-	document.querySelector('#submit').addEventListener('click', submit)
-	document.querySelector('#reset').addEventListener('click', reset)
+	function submit() {
+//		console.log("chosenLetters = ", chosenLetters)
+//			console.log(isBasicWord(chosenLetters.toLowerCase()))
+		if (chosenLetters.length >= 3) {
+			if (isBasicWord(chosenLetters.toLowerCase()) === true) {
+				totalPoints += ptValue;
+				document.querySelector('#score').innerText = totalPoints;
+				scoreBoard();
+				clear();
+			}else{
+				alert("That word isn't in the Bossggle dictionary.")
+			}
+		} else {
+			alert("Word must be at least 3 letters long.");
+		}
+	}
 
 	function clear() {
 		var selectedLetters = document.querySelectorAll(".selected-letter");
@@ -45,13 +63,17 @@
 	}
 
 	function reset() {
-		location.reload();
+		resetBoard()
+		clear()
 	}
 
-	function submit() {
-		totalPoints += ptValue;
-		document.querySelector('#score').innerText = totalPoints;
-		scoreBoard();
-		clear();
-	}
+	document.querySelector('#clear').addEventListener('click', clear)
+	document.querySelector('#submit').addEventListener('click', submit)
+	document.querySelector('#reset').addEventListener('click', reset)
+
+
+
+
+
+
 })()
