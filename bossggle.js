@@ -1,4 +1,16 @@
 (function () {
+	//
+	//	var Game = function() {
+	//		this.score = 0
+	//		this.board = new Board()
+	//	}
+	//	
+	//	var Board = function() {
+	//		this.grid = new Letter
+	//	}
+	//	
+	//	var newGame = new Game()
+	//	newGame.score 
 
 	var chosenLetters = '';
 	//	Line 4 uses Scrabble's letter frequencies in order to approximate letter frequencies in the English language.
@@ -8,6 +20,7 @@
 	var totalPoints = 0;
 
 	var timeLeft = 60
+
 	function countDown() {
 		timeLeft -= 1;
 		document.querySelector("#timer").innerText = "0:" + timeLeft;
@@ -19,7 +32,7 @@
 
 	setInterval(countDown, 1000);
 
-	function onLetterClick(){
+	function onLetterClick() {
 		event.target.classList.add('selected-letter')
 		chosenLetters += event.target.innerText
 		ptValue = chosenLetters.length * 9;
@@ -40,7 +53,7 @@
 	//	line 28 calls resetBoard() immediately so the page will load the board upon opening
 	resetBoard();
 
-	function scoreBoard() {
+	function addWordToScoreBoard() {
 		var scoreList = document.querySelector("#score-board");
 		var scoreRow = document.createElement("div");
 		var scoreWord = document.createElement("div");
@@ -53,13 +66,14 @@
 		scoreRow.appendChild(scoreNumber);
 	}
 
+
 	function submit() {
 		if (chosenLetters.length >= 3) {
 			if (isBasicWord(chosenLetters.toLowerCase()) === true) {
 				totalPoints += ptValue;
 				document.querySelector('#score').innerText = totalPoints;
-				scoreBoard();
-				clear();
+				addWordToScoreBoard();
+				clearSelectedWordDisplay();
 			} else {
 				alert("That word isn't in the Bossggle dictionary.")
 			}
@@ -68,7 +82,7 @@
 		}
 	}
 
-	function clear() {
+	function clearSelectedWordDisplay() {
 		var selectedLetters = document.querySelectorAll(".selected-letter");
 		for (var i = 0; i < selectedLetters.length; i++) {
 			selectedLetters[i].classList.remove("selected-letter")
@@ -80,11 +94,8 @@
 		location.reload();
 	}
 
-	document.querySelector('#clear').addEventListener('click', clear)
+	document.querySelector('#clear').addEventListener('click', clearSelectedWordDisplay)
 	document.querySelector('#submit').addEventListener('click', submit)
 	document.querySelector('#reset').addEventListener('click', reset)
-
-
-
 
 })()
