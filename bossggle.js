@@ -1,11 +1,25 @@
 (function () {
+
 	var chosenLetters = '';
-	var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	//	Line 4 uses Scrabble's letter frequencies in order to approximate letter frequencies in the English language.
+	var alphabet = "AAAAAAAAABBCCDDDDEEEEEEEEEEEEFFGGGHHIIIIIIIIIJKLLLLMMNNNNNNOOOOOOOOPPQRRRRRRSSSSTTTTTTUUUUVVWWXYYZ";
 	var letterBoxes = document.querySelectorAll(".letter")
 	var ptValue = 0
 	var totalPoints = 0;
 
-	var onLetterClick = function () {
+	var timeLeft = 60
+	function countDown() {
+		timeLeft -= 1;
+		document.querySelector("#timer").innerText = "0:" + timeLeft;
+		if (timeLeft === -1) {
+			alert("Time's up! Your final score is " + totalPoints + ".")
+			location.reload();
+		}
+	}
+
+	setInterval(countDown, 1000);
+
+	function onLetterClick(){
 		event.target.classList.add('selected-letter')
 		chosenLetters += event.target.innerText
 		ptValue = chosenLetters.length * 9;
@@ -15,13 +29,15 @@
 	function resetBoard() {
 		for (var i = 0; i < letterBoxes.length; i++) {
 			var randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
-			if (randomLetter === "Q"){
+			//Traditional Boggle has a "Qu" block rather than just a "Q" block, which we've created in lines 20-22
+			if (randomLetter === "Q") {
 				randomLetter = "Qu"
 			}
 			letterBoxes[i].innerHTML = randomLetter;
 			letterBoxes[i].addEventListener('click', onLetterClick)
 		}
 	};
+	//	line 28 calls resetBoard() immediately so the page will load the board upon opening
 	resetBoard();
 
 	function scoreBoard() {
@@ -38,15 +54,13 @@
 	}
 
 	function submit() {
-//		console.log("chosenLetters = ", chosenLetters)
-//			console.log(isBasicWord(chosenLetters.toLowerCase()))
 		if (chosenLetters.length >= 3) {
 			if (isBasicWord(chosenLetters.toLowerCase()) === true) {
 				totalPoints += ptValue;
 				document.querySelector('#score').innerText = totalPoints;
 				scoreBoard();
 				clear();
-			}else{
+			} else {
 				alert("That word isn't in the Bossggle dictionary.")
 			}
 		} else {
@@ -63,15 +77,12 @@
 	}
 
 	function reset() {
-		resetBoard()
-		clear()
+		location.reload();
 	}
 
 	document.querySelector('#clear').addEventListener('click', clear)
 	document.querySelector('#submit').addEventListener('click', submit)
 	document.querySelector('#reset').addEventListener('click', reset)
-
-
 
 
 
